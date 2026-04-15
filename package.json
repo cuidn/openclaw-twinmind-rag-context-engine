@@ -1,0 +1,27 @@
+{
+  "name": "twinmind-rag-context-engine",
+  "version": "1.0.0",
+  "description": "OpenClaw Context Engine plugin that auto-injects TwinMind RAG results into the system prompt",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.4.0"
+  },
+  "openclaw": {
+    "extensions": ["./dist/index.js"]
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

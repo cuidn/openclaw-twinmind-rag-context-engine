@@ -1,0 +1,73 @@
+{
+  "id": "twinmind-rag-context-engine",
+  "kind": "context-engine",
+  "skills": [],
+  "uiHints": {
+    "enabled": {
+      "label": "Enabled",
+      "help": "Enable automatic TwinMind RAG context injection on every prompt"
+    },
+    "ragHost": {
+      "label": "RAG Host",
+      "help": "Primary RAG HTTP server URL (default: http://100.71.2.13:18790)"
+    },
+    "ragFallbackHost": {
+      "label": "RAG Fallback Host",
+      "help": "Fallback RAG HTTP server URL when primary is unavailable (default: http://127.0.0.1:18790)"
+    },
+    "maxChars": {
+      "label": "Max Context Characters",
+      "help": "Maximum characters of RAG context to inject into the system prompt (default: 4000)"
+    },
+    "maxChunks": {
+      "label": "Max Chunks",
+      "help": "Maximum number of RAG document chunks to include (default: 8)"
+    },
+    "topK": {
+      "label": "Top K Results",
+      "help": "Number of top RAG results to retrieve per query (default: 5)"
+    },
+    "timeoutMs": {
+      "label": "RAG HTTP Timeout (ms)",
+      "help": "Timeout in milliseconds for each RAG HTTP request (default: 5000)"
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": {
+        "type": "boolean"
+      },
+      "ragHost": {
+        "type": "string"
+      },
+      "ragFallbackHost": {
+        "type": "string"
+      },
+      "maxChars": {
+        "type": "integer",
+        "minimum": 100,
+        "maximum": 50000
+      },
+      "maxChunks": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 50
+      },
+      "topK": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 20
+      },
+      "timeoutMs": {
+        "type": "integer",
+        "minimum": 500,
+        "maximum": 30000
+      },
+      "fallbackOnError": {
+        "type": "boolean"
+      }
+    }
+  }
+}
